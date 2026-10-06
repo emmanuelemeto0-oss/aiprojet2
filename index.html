@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f5ef" />
+    <meta
+      name="description"
+      content="A simple todo list to keep track of what matters today."
+    />
+    <title>Daymark | Todo List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="wordmark" href="index.html" aria-label="Daymark home">
+          <span class="wordmark-icon" aria-hidden="true">d.</span>
+          <span>daymark</span>
+        </a>
+        <p class="header-note">A little progress, every day.</p>
+      </header>
+
+      <main class="todo-app">
+        <section class="intro" aria-labelledby="page-title">
+          <p class="eyebrow">
+            <span class="eyebrow-dot" aria-hidden="true"></span> YOUR DAILY LIST
+          </p>
+          <h1 id="page-title">Make room for<br /><span>what matters.</span></h1>
+          <p class="intro-copy">One thing at a time. You’ve got this.</p>
+        </section>
+
+        <section class="list-panel" aria-label="Todo list">
+          <form class="add-form" id="todo-form">
+            <label class="visually-hidden" for="todo-input">Add a task</label>
+            <span class="add-symbol" aria-hidden="true">+</span>
+            <input
+              id="todo-input"
+              name="task"
+              type="text"
+              placeholder="What needs doing?"
+              maxlength="120"
+              autocomplete="off"
+              required
+            />
+            <button class="add-button" type="submit">
+              Add task <span aria-hidden="true">↗</span>
+            </button>
+          </form>
+
+          <div class="list-toolbar">
+            <div class="list-heading">
+              <h2>Today</h2>
+              <span class="task-count" id="task-count">0 tasks</span>
+            </div>
+            <div class="filters" role="group" aria-label="Filter tasks">
+              <button
+                class="filter-button is-selected"
+                type="button"
+                data-filter="all"
+                aria-pressed="true"
+              >
+                All
+              </button>
+              <button
+                class="filter-button"
+                type="button"
+                data-filter="active"
+                aria-pressed="false"
+              >
+                Active
+              </button>
+              <button
+                class="filter-button"
+                type="button"
+                data-filter="completed"
+                aria-pressed="false"
+              >
+                Completed
+              </button>
+            </div>
+          </div>
+
+          <ul
+            class="task-list"
+            id="task-list"
+            aria-live="polite"
+            aria-relevant="additions removals text"
+          ></ul>
+          <div class="empty-state" id="empty-state">
+            <span class="empty-mark" aria-hidden="true">✳</span>
+            <p class="empty-title">A clear start.</p>
+            <p class="empty-copy">Add a task above and make today yours.</p>
+          </div>
+
+          <footer class="list-footer">
+            <span
+              ><span class="footer-dot" aria-hidden="true"></span
+              ><span id="remaining-count">Nothing pending</span></span
+            >
+            <span>Saved on this device</span>
+          </footer>
+        </section>
+        <p class="privacy-note">
+          Your list stays private and is stored in this browser.
+        </p>
+      </main>
+
+      <footer class="site-footer">
+        <span>DAYMARK <span aria-hidden="true">/</span> DAILY NOTES</span>
+        <span>Take it one task at a time.</span>
+      </footer>
+    </div>
+  </body>
+</html>
